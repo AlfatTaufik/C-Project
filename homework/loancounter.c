@@ -26,6 +26,10 @@ int main(void) {
     printf("Enter the number of your monthly payments: ");
     scanf("%f", &amount);
 
-    balance = loan + (loan * rate);
+    balance = loan + (loan * rate) - amount;
     printf("Balance remaining after first month: %.2f\n", balance);
+    balance = balance + (balance * rate) - amount;
+    printf("Balance remaining after second month: %.2f\n", balance);
+    balance = balance + (balance * rate) - amount;
+    printf("Balance remaining after third month: %.2f\n", balance);
 }
