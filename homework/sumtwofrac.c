@@ -6,6 +6,7 @@ int main(void) {
 
     printf("Enter the first fraction (numerator and denominator): ");
     scanf("%d/%d", &num1, &denom1);
+    printf("Enter the second fraction (numerator and denominator): ");
     scanf("%d/%d", &num2, &denom2);
 
     printf("The sum of %d/%d and %d/%d is: ", num1, denom1, num2, denom2);
