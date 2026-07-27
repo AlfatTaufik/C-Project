@@ -1,15 +1,16 @@
 #include <stdio.h>
 
 int main(){
-	int angka, satuan, puluhan, ratusan;
-	
-	printf("Masukan angka puluhan 10 - 99 : ");
+	int angka, digit;
+	digit = 1;
+	printf("Masukan angka : ");
 	scanf("%d", &angka);
-	satuan = angka / 100;
-	puluhan = angka % 100;
-	ratusan = puluhan % 10;
-	puluhan /= 10;
-	printf("Reverse of your number is %d%d%d\n", ratusan, puluhan, satuan);
+
+	do {
+		angka = angka / 10;
+		digit++;
+	} while (angka != 0);
+	printf("Number count : %d\n", digit);
 	
 	return 0;
 }
