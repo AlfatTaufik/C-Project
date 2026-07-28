@@ -1,10 +1,11 @@
 #include <stdio.h>
 
 int main(){
-	int n;
+	int n, m;
 	scanf("%d", &n);
-	for(int i = 0; i <= n; i++){
-		printf("%d\n", i * i);
+	while(m % 24 != 0){
+		printf("%10d", n * n);
+		m = n;
 	}
 	
 	return 0;
