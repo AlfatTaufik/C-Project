@@ -1,39 +1,22 @@
 #include <stdio.h>
 #include <ctype.h>
 
-int main(){
+int main() {
 	char ch;
-	int sum;
-	sum = 0;
-	printf("Enter a word : ");
+	int scrabble_values[26] = {
+        1, 3, 3, 2, 1, 4, 2, 4, 1, 8,  // A B C D E F G H I J
+        5, 1, 3, 1, 1, 3, 10, 1, 1, 1, // K L M N O P Q R S T
+        1, 4, 4, 8, 4, 10              // U V W X Y Z
+    };
+	int total_score = 0;
+
 	while((ch = getchar()) != '\n'){
-		switch(toupper(ch)){
-			case 'A' : case 'E' : case 'I' : case 'L' : case 'N' :
-			case 'O' : case 'R' : case 'S' : case 'T' : case 'U' :
-				sum += 1;
-				break;
-			case 'D' : case 'G' :
-				sum += 2;
-				break;
-			case 'B' : case 'C' : case 'M' : case 'P' :
-				sum += 3;
-				break;
-			case 'F' : case 'H' : case 'V' : case 'W' : case 'Y' :
-				sum += 4;
-				break;
-			case 'K' :
-				sum += 5;
-				break;
-			case 'J' : case 'X' :
-				sum += 8;
-				break;
-			case 'Q' : case 'Z' :
-				sum += 10;
-				break;
-			default :
-				break;
-		}	
+		if(isalpha(ch)){
+			ch = toupper(ch);
+			total_score += scrabble_values[ch - 'A'];
+		} 
 	}
-	printf("Scrabble value : %d", sum);
+
+	printf("Your total score is %d\n", total_score);
 	return 0;
-} 
+}

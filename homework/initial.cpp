@@ -3,6 +3,8 @@
 
 int main() {
     char ch;
+    char last_name[20];
+    int i = 0;
     // char last[] = " ";
     char initial;
 
@@ -10,7 +12,7 @@ int main() {
 
     }
     // putchar(ch);
-    initial = ch;
+    last_name[0] = ch;
     while((ch = getchar()) != ' '){
 
     }
@@ -20,7 +22,7 @@ int main() {
     }
 
     putchar(ch);
-    while((ch = getchar()) != ' ' && ch != '\n'){
+    while((ch = getchar()) != ' ' && ch != '\n' && i < ){
         putchar(ch);
     }
     printf(", %c.", toupper(initial));
