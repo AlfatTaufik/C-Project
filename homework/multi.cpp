@@ -15,14 +15,21 @@ int main() {
     }
 
     printf("Row totals: ");
+    printf("\n");
+    printf("Row Average: ");
     for(int i = 0; i < 5; i++){
         printf("%2d ", sum_row[i]);
+        printf("%2d ", sum_row[i]/5);
+         
     }
     printf("\n");
     printf("Column totals: ");
+    printf("\n");
+    printf("Column average: ");
     for (int j = 0; j < 5; j++)
     {
         printf("%2d ", sum_cols[j]);
+        printf("%2d ", sum_cols[j]/5);
     }
 
     return 0;
